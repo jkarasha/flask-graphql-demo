@@ -1,0 +1,32 @@
+schema {
+  query: Query
+}
+
+type User {
+  id: ID!
+  first_name: String!
+  last_name: String!
+  phone_number: String!
+  email_address: String!
+  pin_number: String!
+  county: String
+  city: String
+  state: String
+  zip_code: String
+}
+
+type UserResults {
+  success: Boolean!
+  error: [String]
+  user: User
+}
+
+type UsersResults {
+  success: Boolean!
+  error: [String]
+  users: [User]
+}
+
+type Query {
+  users: UsersResults
+}
